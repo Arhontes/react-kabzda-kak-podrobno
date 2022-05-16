@@ -1,17 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import AccordionTitle from "../AccordionComponents/AccordionTitle";
 import AccordionBody from "../AccordionComponents/AccordionBody";
 
 export type AccordionPropsType = {
     titleValue: string,
-    collapsed?: boolean
+
 }
 
-function Accordion({titleValue,collapsed=false}:AccordionPropsType) {
+function Accordion({titleValue}:AccordionPropsType) {
+
+    let [collapsed, setCollaps] = useState<boolean>(true)
+
     return (
 
             <div>
-                <AccordionTitle title={titleValue}/>
+                <AccordionTitle setCollapse={()=>setCollaps(!collapsed)} title={titleValue}/>
                 {!collapsed &&  <AccordionBody/>}
             </div>
 

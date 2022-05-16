@@ -5,15 +5,35 @@ function OnOff() {
     const onClickHandler=()=>{
         setOn_OffState(!on_offState)
     }
+    const boxStyle={
+        width: "50px",
+        height: "30px",
+        border: "solid black 1px",
+        margin: "2px",
+        paddingTop:"5px",
+    }
+    const boxOnStyle ={
+        ...boxStyle,
+        backgroundColor: on_offState?"green":"white"
 
-    const vkl = on_offState?s.turnOn:s.turnOff
-
+    }
+    const boxOffStyle ={
+        ...boxStyle,
+        backgroundColor: on_offState?"white":"red"
+    }
+    const indicatorStyle={
+        width: "20px",
+        height: "20px",
+        border: "solid black 2px",
+        borderRadius: "50%",
+        backgroundColor: on_offState?"green":"red"
+    }
     return (
-        <div>
+        <div className={s.onOffContainer}>
 
-            <div className={vkl} onClick={onClickHandler}>ON</div>
-            <div className={vkl} onClick={onClickHandler}>OFF</div>
-            <div className={s.indicator}> </div>
+            <div style={boxOnStyle} onClick={onClickHandler}>ON</div>
+            <div style={boxOffStyle} onClick={onClickHandler}>OFF</div>
+            <div style={indicatorStyle}></div>
         </div>
     );
 }
