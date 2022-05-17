@@ -5,14 +5,17 @@ import Rating from "./components/Rating/Rating/Rating";
 import OnOff from "./components/On_Off/ON_OFF";
 import ControlledRating from "./components/Rating/Rating/ControlledRating";
 import ControlledAccordion from "./components/Accordion/Accordion/ControlledAccordion";
+import ControlledON_OFF from "./components/On_Off/ControlledON_OFF";
 
 export type RatingValueType = 0|1|2|3|4|5
+export type OnOffType = "On"|"Off"
+
 
 function App() {
 
     const [rating,setRating] = useState<RatingValueType>(0)
     const [accordionCollapsed,setAccordionCollapsed ] = useState<boolean>(false)
-
+    const [onOffState,setOnOffState] = useState<OnOffType>("Off")
     return (
         <div className="App">
             {/*Uncontrolled components*/}
@@ -25,6 +28,7 @@ function App() {
 
             <ControlledAccordion titleValue={"ControlledMenu"} collapsed={accordionCollapsed} setCollapse={setAccordionCollapsed}/>
             <ControlledRating setRating={setRating} rating={rating}/>
+            <ControlledON_OFF onOffState={onOffState} setOnOffState={setOnOffState}/>
         </div>
     );
 }
