@@ -12,7 +12,7 @@ export type OnOffType = "On"|"Off"
 
 
 function App() {
-
+    console.log("rendering App")
     const [rating,setRating] = useState<RatingValueType>(0)
     const [accordionCollapsed,setAccordionCollapsed ] = useState<boolean>(false)
     const [onOffState,setOnOffState] = useState<OnOffType>("Off")

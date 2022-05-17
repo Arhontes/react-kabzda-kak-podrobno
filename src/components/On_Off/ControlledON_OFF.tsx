@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 import s from './ON_OFF.module.css'
 import {OnOffType} from "../../App";
 
-type UncontrolledOnOffPropsType = {
+type ControlledOnOffPropsType = {
     onOffState: OnOffType,
     setOnOffState: (state:OnOffType)=>void
 }
 
-function UncontrolledOnOff({onOffState, setOnOffState}:UncontrolledOnOffPropsType) {
-
+function ControlledOnOff({onOffState, setOnOffState}:ControlledOnOffPropsType) {
+    console.log("rendering ControlledOnOff")
 
     const boxStyle={
         width: "50px",
@@ -46,4 +46,4 @@ function UncontrolledOnOff({onOffState, setOnOffState}:UncontrolledOnOffPropsTyp
     );
 }
 
-export default UncontrolledOnOff;
+export default ControlledOnOff;

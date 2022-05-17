@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import s from './ON_OFF.module.css'
 function OnOff() {
+    console.log("rendering UncontrolledOnOff")
     let [on_offState,setOn_OffState] = useState<boolean>(false)
     const onClickHandler=()=>{
         setOn_OffState(!on_offState)
