@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
 import Star from "../RatingComponent/Star/Star";
+import {RatingValueType} from "../../../App";
 
-export type RatingValueType = 0|1|2|3|4|5
 
 export type RatingPropsType={
-    value:RatingValueType
+    rating:RatingValueType
+    setRating: (props:RatingValueType)=>void
 }
-function Rating() {
-
-    let [rating,setRating] = useState<RatingValueType>(0)
-
+function Rating({rating,setRating}:RatingPropsType) {
 
     return (
         <div>
