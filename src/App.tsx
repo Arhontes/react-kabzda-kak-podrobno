@@ -10,7 +10,7 @@ function App() {
         <div className="App">
             <Accordion titleValue={`Menu`}/>
             <Accordion titleValue={`Users`}/>
-            <Rating value={2}/>
+            <Rating />
             <OnOff/>
         </div>
     );

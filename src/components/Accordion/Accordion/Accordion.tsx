@@ -9,12 +9,12 @@ export type AccordionPropsType = {
 
 function Accordion({titleValue}:AccordionPropsType) {
 
-    let [collapsed, setCollaps] = useState<boolean>(true)
+    let [collapsed, setCollapse] = useState<boolean>(true)
 
     return (
 
             <div>
-                <AccordionTitle setCollapse={()=>setCollaps(!collapsed)} title={titleValue}/>
+                <AccordionTitle setCollapse={()=>setCollapse(!collapsed)} title={titleValue}/>
                 {!collapsed &&  <AccordionBody/>}
             </div>
 
