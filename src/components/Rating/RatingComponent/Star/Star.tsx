@@ -7,9 +7,7 @@ export type StarPropsType={
 }
 function Star({selected=false,...props}:StarPropsType) {
     const starStyle = selected?style.selectedStar:""
-    const onClickHandler =()=>{
 
-    }
     return (
         <span onClick={()=>props.setRating()} className={starStyle}> Star </span>
     );
