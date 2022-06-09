@@ -1,12 +1,13 @@
 import React from 'react';
+type AccordionBodyType = {
+    items:string[]
+}
+function AccordionBody(props:AccordionBodyType) {
 
-function AccordionBody() {
+    const itemList = props.items.map((i,index)=><div key={index}>{i}</div>)
     return (
         <div>
-            <div> AccordionBody1</div>
-            <div> AccordionBody2</div>
-            <div> AccordionBody3</div>
-            <div> AccordionBody4</div>
+            {itemList}
         </div>
 
     );

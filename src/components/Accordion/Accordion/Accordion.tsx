@@ -15,7 +15,7 @@ function Accordion({titleValue}:AccordionPropsType) {
 
             <div>
                 <AccordionTitle setCollapse={()=>setCollapse(!collapsed)} title={titleValue}/>
-                {!collapsed &&  <AccordionBody/>}
+                {!collapsed &&  <AccordionBody items={[]} />}
             </div>
 
     );

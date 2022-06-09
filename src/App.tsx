@@ -6,6 +6,7 @@ import OnOff from "./components/On_Off/ON_OFF";
 import ControlledRating from "./components/Rating/Rating/ControlledRating";
 import ControlledAccordion from "./components/Accordion/Accordion/ControlledAccordion";
 import ControlledON_OFF from "./components/On_Off/ControlledON_OFF";
+import Select from "./components/Select/Select";
 
 export type RatingValueType = 0|1|2|3|4|5
 export type OnOffType = "On"|"Off"
@@ -26,9 +27,11 @@ function App() {
 
             {/*//Controlled components*/}
 
-            <ControlledAccordion titleValue={"ControlledMenu"} collapsed={accordionCollapsed} setCollapse={setAccordionCollapsed}/>
+            <ControlledAccordion items={['first',"second","third", "forth"]} titleValue={"ControlledMenu"} collapsed={accordionCollapsed} setCollapse={setAccordionCollapsed}/>
             <ControlledRating setRating={setRating} rating={rating}/>
             <ControlledON_OFF onOffState={onOffState} setOnOffState={setOnOffState}/>
+
+            <Select />
         </div>
     );
 }
