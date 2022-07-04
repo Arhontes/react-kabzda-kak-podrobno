@@ -1,5 +1,4 @@
 import React, {useMemo, useState} from 'react';
-import {log} from "util";
 
 export const HelpForReactMemoExample = () => {
     console.log("rendering HelpForReactMemoExample")
@@ -7,14 +6,15 @@ export const HelpForReactMemoExample = () => {
     const [counter,setCounter] = useState(0)
 
     let newArr = useMemo(()=>{
+        console.log("попал в юзмемо")
         return users.filter(el=>el.length>3)
     },[users])
 
     return (
         <div>
             <span>{counter}</span>
-            <button onClick={()=>setCounter(counter+1)}></button>
-            <button onClick={()=>setUsers([...users,"asssaaa"])}></button>
+            <button onClick={()=>setCounter(counter+1)}>setCounter</button>
+            <button onClick={()=>setUsers([...users,`${users.length}`+"AAA"])}>setUsers</button>
 
             <ReactMemoUsers users={newArr}/>
         </div>
