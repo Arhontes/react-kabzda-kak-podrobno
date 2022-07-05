@@ -11,6 +11,7 @@ import DifficultCountingExample from "./components/UseMemo/DifficultCountingExam
 import {Example} from "./components/ReactMemo/Example";
 import UsingExampleContainer from "./components/ReactMemo/UsingExampleContainer";
 import {HelpForReactMemoExample} from "./components/UseMemo/HelpForReactMemoExample";
+import {LikeUseCallback} from "./components/UseCallback/useCallback";
 
 export type RatingValueType = 0|1|2|3|4|5
 export type OnOffType = "On"|"Off"
@@ -42,9 +43,13 @@ function App() {
             <hr/>
             <DifficultCountingExample/>
             <hr/>
-            <UsingExampleContainer/>*/}
-            <hr/>
+            <UsingExampleContainer/>
+             <hr/>
             <HelpForReactMemoExample />
+            */}
+
+            <hr/>
+            <LikeUseCallback/>
         </div>
     );
 }
