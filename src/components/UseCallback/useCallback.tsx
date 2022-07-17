@@ -8,7 +8,6 @@ export const LikeUseCallback = () => {
 
     let setUsersHandler = useCallback(()=>{setUsers([...users,`${users.length} AAA`])
     },[users])
-    console.log(users)
     return (
         <div>
             <span>{counter}</span>
