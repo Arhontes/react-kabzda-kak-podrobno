@@ -1,35 +1,28 @@
 import React, {useEffect, useState} from 'react';
+import DigitClockView from "./DigitClockView";
+import {AnalogClockView} from "./AnalogClockView";
 
-type ClockPropsType = {}
-const correctClockView = (unit:number) => unit<10? `${0}${unit}`:unit
 
-const Clock = (props: ClockPropsType) => {
+export type ClockViewPropsType = { date: Date }
+
+export type ClockPropsType = {mode:"analog"|"digit"}
+
+export const Clock = (props:ClockPropsType) => {
     const [date, setDate] = useState<Date>(new Date())
 
-    useEffect(()=>{
-        const timer = setInterval(()=>{
+    useEffect(() => {
+        const timer = setInterval(() => {
             setDate(new Date())
-        },1000)
-        return ()=>{
+        }, 1000)
+        return () => {
             clearInterval(timer)
         }
-    },[])
-
-    const seconds = date.getSeconds()
-    const minutes = date.getMinutes()
-    const hours = date.getHours()
-
-
-
+    }, [])
     return (
         <div>
+            {props.mode==="analog"?<AnalogClockView date={date}/>:<DigitClockView date={date}/>}
 
-
-            <span>{correctClockView(hours)}:</span>
-            <span>{correctClockView(minutes)}:</span>
-            <span>{correctClockView(seconds)}</span>
         </div>
-    );
-};
+    )
+}
 
-export default Clock;

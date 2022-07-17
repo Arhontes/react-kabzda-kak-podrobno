@@ -12,7 +12,7 @@ import {Example} from "./components/ReactMemo/Example";
 import UsingExampleContainer from "./components/ReactMemo/UsingExampleContainer";
 import {HelpForReactMemoExample} from "./components/UseMemo/HelpForReactMemoExample";
 import {LikeUseCallback} from "./components/UseCallback/useCallback";
-import Clock from "./components/Clock/Clock";
+import {Clock} from "./components/Clock/Clock";
 
 export type RatingValueType = 0|1|2|3|4|5
 export type OnOffType = "On"|"Off"
@@ -51,7 +51,7 @@ function App() {
 
             <hr/>
             <LikeUseCallback/>
-            <Clock />
+            <Clock mode={"analog"}/>
         </div>
     );
 }
